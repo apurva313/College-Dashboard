@@ -7,7 +7,7 @@ const Attendance = () => {
             "id": 1,
             "name": "kolkata",
             "room": "mbt1",
-            "prince": 2000,
+            "price": 2000,
             "state": "West Bengal"
         },
         {
@@ -114,14 +114,54 @@ const Attendance = () => {
             "room": "ngt16",
             "price": 2200,
             "state": "Maharashtra"
-        }
-    ]
+        },
+    ];
 
-    return (
+    const [searchText, setSearchText]= useState("");
+    const [data,setData]= useState(dataList);
+    //exculde column list frojm filter
+
+    const exculdeColumns=["id"];
+
+    //change event of search input
+    const hc= value => {
+        setSearchText(value);
+        filterData(value);
+        
+    }
+    const filterData= (value)=>{
+        const lowercaseValue= value.toLowerCase().trim();
+        if(lowercaseValue ==="") setData(dataList);
+        else{
+            const filteredData= dataList.filter(item =>{
+                    return Object.keys(item).some(key =>
+                        exculdeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercaseValue))
+            });
+            setData(filteredData);
+        }
+
+    }
+
+
+
+    return <>
         <div>
-            Attendace
+            Search: <input type='text' placeholder='Type To search here..' value={searchText} onChange={e => hc(e.target.value)}/>
+
+                    <div className='box-container'>
+                        {
+                            data.map((x)=>(
+                                <div>
+                                    <b>Name</b>: {x.name} <br/>
+                                    <b>Price</b>: {x.price} <br/>
+                                    <b>Room</b>: {x.room} <br/>
+                                    <b>State</b>: {x.state} <br/>
+                                </div>
+                            ))
+                        }
+                    </div>
         </div>
-    )
+    </>
 }
 
 export default Attendance
