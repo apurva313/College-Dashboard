@@ -39,7 +39,7 @@ const Sidebar = () => {
                                     <NavLink to="/t" className="nav">Teacher</NavLink>
                                     <NavLink to="/s" className="nav">Staff</NavLink>
                                     <NavLink to="/tr" className="nav">Transport</NavLink>
-                                    <NavLink to="" className="nav">Book</NavLink>
+                                    <NavLink to="/bk" className="nav">Book</NavLink>
                                     <NavLink to="" className="nav">Attendance</NavLink>
 
                                     <div className='title'>
