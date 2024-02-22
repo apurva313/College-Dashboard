@@ -7,6 +7,7 @@ import Home from './component/pages/Home';
 import Teacher from './component/pages/Teacher';
 import Staff from './component/pages/Staff';
 import Transport from './component/pages/Transport';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
