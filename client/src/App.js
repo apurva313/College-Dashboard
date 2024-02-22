@@ -9,6 +9,7 @@ import Staff from './component/pages/Staff';
 import Transport from './component/pages/Transport';
 import 'react-toastify/dist/ReactToastify.css'
 import Book from './component/pages//Book';
+import Attendance from './component/pages/Attendance';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/s" element={<Staff/>}></Route>
             <Route path='/tr' element={<Transport/>}></Route>
             <Route path='/bk' element={<Book/>}></Route>
+            <Route path='/at' element={<Attendance/>}></Route>
           </Routes>
         </BrowserRouter>
     </div>

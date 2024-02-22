@@ -40,7 +40,7 @@ const Sidebar = () => {
                                     <NavLink to="/s" className="nav">Staff</NavLink>
                                     <NavLink to="/tr" className="nav">Transport</NavLink>
                                     <NavLink to="/bk" className="nav">Book</NavLink>
-                                    <NavLink to="" className="nav">Attendance</NavLink>
+                                    <NavLink to="/at" className="nav">Attendance</NavLink>
 
                                     <div className='title'>
                                         <span>ADMINISTRATOR</span>
